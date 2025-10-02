@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|default('fr') }}">
+<head>
+    {% block metas %}{% include '@App/partials/meta.html.twig' %}{% endblock %}
+
+    <title>{% block title %}{{ controller_name|default('Page Title') }}{% endblock %} - {{ metas.title }}</title>
+
+    {% block favicons %}{% include '@App/partials/favicon.html.twig' %}{% endblock %}
+
+    {% block stylesheets %}
+    <!-- Stylesheets -->
+    {% endblock %}
+    <!-- Libraries -->
+    <link rel="stylesheet" href="{{ asset('libraries/fontawesome/7.0.1/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <!-- main css -->
+    <link rel="stylesheet" href="{{ asset('themes/css/site.min.css') }}">
+</head>
+<body{% block body %} class="theme-red font-roboto"{% endblock %}>
+
+{% block main %}
+
+{#{% include '@App/partials/loader.html.twig' %}#}
+
+{% include '@App/partials/theme.html.twig' %}
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<div id="wrapper">
+    {% block notification %}{% include '@App/partials/alert.html.twig' %}{% endblock %}
+
+    {% block navbar %}{% include '@App/partials/header.html.twig' %}{% endblock %}
+
+    {% block search %}{% include '@App/partials/search.html.twig' %}{% endblock %}
+
+    {% block megamenu %}{% include '@App/partials/mega-menu.html.twig' %}{% endblock %}
+
+    {% block rightbar %}{% include '@App/partials/right-sidebar.html.twig' %}{% endblock %}
+
+    {% block leftbar %}{% include '@App/partials/left-sidebar.html.twig' %}{% endblock %}
+
+    <div id="main-content">
+        <div class="{% block container %}{{ container|default('container-fluid') }}{% endblock %}">
+            {% include '@App/partials/breadcrumb.html.twig' %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+<!-- Scripts -->
+<script src="{{ asset('themes/bundles/libscripts.bundle.js') }}"></script>
+<script src="{{ asset('themes/bundles/vendorscripts.bundle.js') }}"></script>
+<script src="{{ asset('themes/bundles/mainscripts.bundle.js') }}"></script>
+<!-- Libraries -->
+{# jQuery #}
+{#<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>#}
+{# back to top #}
+{#<script src="{{ asset('libraries/scroll-to-top-button/jquery-backToTop.js') }}"></script>#}
+{# font awesome #}
+{#<script src="{{ asset('libraries/fontawesome/7.0.1/js/all.min.js') }}"></script>#}
+{% block importmap %}{{ importmap('app') }}{% endblock %}
+
+</body>
+</html>

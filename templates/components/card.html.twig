@@ -1,0 +1,30 @@
+{#<div{{ attributes }}>#}
+{#</div>#}
+
+<!-- component HTML -->
+<div class="row">
+{% for key, value in data %}
+{#    {{ dump(value) }}#}
+    <div class="col-lg-{{ this.column() }} col-md-12">
+        <div class="card mb-2">
+            <div class="card-body p-2">
+                <div class="form-group m-0 px-1">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button
+                                class="btn btn-outline-secondary border-secondary input-group-text mt-clipboard"
+                                data-clipboard-action="copy"
+                                data-clipboard-target="#{{ key }}"
+                            >
+                                <i class="fa-solid fa-copy"></i>
+                            </button>
+                        </div>
+                        <label for="{{ key }}"></label>
+                        <input type="text" id="{{ key }}" class="form-control form-control-lg border-secondary" placeholder="{{ value }}" value="{{ value }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="jumbotron bg-dark shadow rounded p-15">
+        <h1 class="h2 font-weight-bold">{{ breadcrumb.level2 }}</h1>
+    </div>
+
+    <twig:Card data="{{ data }}" column="{{ column }}" />
+{% endblock %}
