@@ -11,7 +11,7 @@ parameters:
         title:              'Méphisto'
         author:             'Giancarlo PALUMBO'
         email:              'giancarlo.palumbo@free.fr'
-        description:        ~
+        description:        'Liste de recherches pour Microsoft Rewards'
         generator:          ~
     folders:
         csv:                '%kernel.project_dir%/../documents/csv/'

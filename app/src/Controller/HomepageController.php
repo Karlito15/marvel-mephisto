@@ -32,11 +32,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/avions.php', name: 'avions')]
-    public function avions(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/avions.php', name: 'avion')]
+    public function avion(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.avions');
+        $title = $this->translator->trans('text.avion');
         $file  = 'avion.yaml';
 
         return $this->render('@App/contents/card.html.twig', [
@@ -49,11 +49,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/chiens.php', name: 'chiens')]
-    public function chiens(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/chiens.php', name: 'chien')]
+    public function chien(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.chiens');
+        $title = $this->translator->trans('text.chien');
         $file  = 'chien.yaml';
 
         return $this->render('@App/contents/card.html.twig', [
@@ -66,11 +66,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/emblemes.php', name: 'emblemes')]
-    public function emblemes(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/emblemes.php', name: 'embleme')]
+    public function embleme(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.emblemes');
+        $title = $this->translator->trans('text.embleme');
         $file  = 'embleme.yaml';
 
         return $this->render('@App/contents/card.html.twig', [
@@ -83,11 +83,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/films.php', name: 'films')]
-    public function films(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/films.php', name: 'film')]
+    public function film(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.films');
+        $title = $this->translator->trans('text.film');
         $file  = 'film.yaml';
 
         return $this->render('@App/contents/card.html.twig', [
@@ -100,11 +100,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/fruits.php', name: 'fruits')]
-    public function fruits(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/fruits.php', name: 'fruit')]
+    public function fruit(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.fruits');
+        $title = $this->translator->trans('text.fruit');
         $file  = 'fruit.yaml';
 
         return $this->render('@App/contents/card.html.twig', [
@@ -151,11 +151,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/pilotes.php', name: 'pilotes')]
-    public function pilotes(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/pilotes.php', name: 'pilote')]
+    public function pilote(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.pilotes');
+        $title = $this->translator->trans('text.pilote');
         $file  = 'pilote.yaml';
 
         return $this->render('@App/contents/card.html.twig', [
@@ -185,11 +185,11 @@ final class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '{_locale<%app.supported_locales%>}/series.php', name: 'series')]
-    public function series(): Response
+    #[Route(path: '{_locale<%app.supported_locales%>}/series.php', name: 'serie')]
+    public function serie(): Response
     {
         // Variables
-        $title = $this->translator->trans('text.series');
+        $title = $this->translator->trans('text.serie');
         $file  = 'serie.yaml';
 
         return $this->render('@App/contents/card.html.twig', [

@@ -1,7 +1,5 @@
 import './bootstrap.js';
 
-// import './clipboardjs.js';
-
 /*
  * Welcome to your app's main JavaScript file!
  *

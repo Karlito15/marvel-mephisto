@@ -3,4 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+#    prefix:
+#        en: '/en'
+#        fr: '/'
+#        it: '/it'
     schemes: [http, https]

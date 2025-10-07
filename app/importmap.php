@@ -25,7 +25,4 @@ return [
     '@hotwired/turbo' => [
         'version' => '8.0.18',
     ],
-    'clipboard' => [
-        'version' => '2.0.11',
-    ],
 ];
