@@ -15,6 +15,7 @@ twig:
         thousands_separator:    ' '
     paths:
         '%kernel.project_dir%/../templates': 'App'
+        '%kernel.project_dir%/../../Blurp/templates': 'Blurp'
     globals:
         metas:                  '%metas%'
         folders:                '%folders%'

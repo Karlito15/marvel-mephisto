@@ -12,19 +12,19 @@
 !vars/log/.gitkeep
 
 # Managed by Composer
-/www/bin/*
-/www!bin/console
-/www/vendor/
+/app/bin/*
+/app!bin/console
+/app/vendor/
 
 # Assets and user uploads
-/www/public/bundles/
-/www/public/uploads/
+/app/public/bundles/
+/app/public/uploads/
 
 # PHPUnit
-/www/phpunit.xml
+/app/phpunit.xml
 
 # Build data
-/www/build/
+/app/build/
 
 # Composer PHAR
 /composer.phar
@@ -33,8 +33,8 @@
 /.web-server-pid
 
 # Node artifact files
-www/node_modules/
-www/dist/
+app/node_modules/
+app/dist/
 
 # JetBrains IDE
 .idea/
