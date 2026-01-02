@@ -19,7 +19,6 @@ tasks:
             - echo "{{.GREETING}}"
             - task --list
 
-
 ### COMPOSER
     cc:
         desc: "Clears composer's internal package cache"
@@ -61,35 +60,6 @@ tasks:
         desc: "Clear symfony cache"
         cmds:
             - "{{.SYMFONY_CONSOLE}} cache:clear --env dev"
-    # Database & Doctrine
-    dc:
-        desc: "Create symfony database"
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:database:create" # --if-not-exists
-    dd:
-        desc: "Drop symfony database"
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:database:drop --force" # --if-exists
-    du:
-        desc: "Update symfony schema database"
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:schema:update --force"
-    dmd:
-        desc: "Generate a migration by comparing your current database to your mapping information."
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:migrations:diff --no-interaction"
-    dmm:
-        desc: "Execute a migration to the latest available version."
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:migrations:migrate --no-interaction"
-    dmmp:
-        desc: "Execute a migration to a specified version."
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:migrations:migrate prev --no-interaction"
-    fixtures:
-        desc: "Load fixtures"
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} doctrine:fixtures:load --no-interaction"
     # Maker
     mm:
         desc: "Make symfony migration"
@@ -132,7 +102,7 @@ tasks:
     start:
         desc: "Server Symfony Start"
         cmds:
-            - "{{.SYMFONY}} local:server:start -d --allow-http"
+            - "{{.SYMFONY}} local:server:start -d"
     stop:
         desc: "Server Symfony Stop"
         cmds:
@@ -156,25 +126,13 @@ tasks:
 
 
 ### CUSTOM
-    scripts:
-        desc: "Clear Cache, Assets, Import Map & Compile & SASS Build"
-        cmds:
-            - "clear"
-            - "{{.SYMFONY_CONSOLE}} cache:clear --env=dev"
-            - "{{.SYMFONY_CONSOLE}} assets:install public"
-            - "{{.SYMFONY_CONSOLE}} importmap:install"
-            - "{{.SYMFONY_CONSOLE}} importmap:update"
-#            - "{{.SYMFONY_CONSOLE}} sass:build"
-            - "{{.SYMFONY_CONSOLE}} asset-map:compile"
-        ignore_error: true
-        platforms: [windows/amd64]
     launch:
         desc: "Start Symfony server for local dev"
         cmds:
             - "clear"
-#            - task scripts
             - task secure
             - task start
+            - task scc
             - task open
         ignore_error: true
         platforms: [windows/amd64]
@@ -186,23 +144,13 @@ tasks:
             - task launch
         ignore_error: true
         platforms: [windows/amd64]
-    dev:
-        desc: "Clear Cache, Start Symfony Server & Open Browser"
+    scripts:
+        desc: "Clear Cache, Assets, Import Map & Compile"
         cmds:
-            - task launch
-        ignore_error: true
-        platforms: [windows/amd64]
-    prod:
-        desc: "Clear Cache, Assets"
-        cmds:
-            - "{{.SYMFONY_CONSOLE}} cache:clear --env prod"
-            - "{{.SYMFONY_CONSOLE}} assets:install public --env=prod"
+            - "clear"
+            - "{{.SYMFONY_CONSOLE}} cache:clear --env dev"
+            - "{{.SYMFONY_CONSOLE}} assets:install public"
             - "{{.SYMFONY_CONSOLE}} importmap:install"
-            - "{{.SYMFONY_CONSOLE}} importmap:update"
-#            - "{{.SYMFONY_CONSOLE}} sass:build"
-            - "{{.SYMFONY_CONSOLE}} asset-map:compile --env=prod"
-            - "{{.SYMFONY_CONSOLE}} cache:pool:clear --all"
-            - "rm -rf public/cache/"
-#            - "{{.COMPOSER}} run auto-scripts"
+            - "{{.SYMFONY_CONSOLE}} asset-map:compile"
         ignore_error: true
         platforms: [windows/amd64]

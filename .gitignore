@@ -12,22 +12,32 @@
 !vars/log/.gitkeep
 
 # Managed by Composer
-/app/bin/*
-/app!bin/console
-/app/vendor/
+app/bootstrap.php.cache
+app/bin/*
+app!bin/console
+app!bin/symfony_requirements
+app/vendor/
+
+# Parameters
+app/config/parameters.yml
+app/config/parameters.ini
 
 # Assets and user uploads
-/app/public/bundles/
-/app/public/uploads/
+app/public/assets/
+app/public/bundles/
+app/public/uploads/
 
 # PHPUnit
-/app/phpunit.xml
+app/phpunit.xml
 
 # Build data
-/app/build/
+app/build/
 
 # Composer PHAR
 /composer.phar
+
+# Backup entities generated with doctrine:generate:entities command
+app/**/Entity/*~
 
 # Embedded web-server pid file
 /.web-server-pid
